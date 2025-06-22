@@ -1,0 +1,386 @@
+%----------UQLM METHODS-------------------------%
+@Article{Farquhar2024,
+author={Farquhar, Sebastian
+and Kossen, Jannik
+and Kuhn, Lorenz
+and Gal, Yarin},
+title={Detecting hallucinations in large language models using semantic entropy},
+journal={Nature},
+year={2024},
+month={Jun},
+day={01},
+volume={630},
+number={8017},
+pages={625-630},
+abstract={Large language model (LLM) systems, such as ChatGPT1 or Gemini2, can show impressive reasoning and question-answering capabilities but often `hallucinate' false outputs and unsubstantiated answers3,4. Answering unreliably or without the necessary information prevents adoption in diverse fields, with problems including fabrication of legal precedents5 or untrue facts in news articles6 and even posing a risk to human life in medical domains such as radiology7. Encouraging truthfulness through supervision or reinforcement has been only partially successful8. Researchers need a general method for detecting hallucinations in LLMs that works even with new and unseen questions to which humans might not know the answer. Here we develop new methods grounded in statistics, proposing entropy-based uncertainty estimators for LLMs to detect a subset of hallucinations---confabulations---which are arbitrary and incorrect generations. Our method addresses the fact that one idea can be expressed in many ways by computing uncertainty at the level of meaning rather than specific sequences of words. Our method works across datasets and tasks without a priori knowledge of the task, requires no task-specific data and robustly generalizes to new tasks not seen before. By detecting when a prompt is likely to produce a confabulation, our method helps users understand when they must take extra care with LLMs and opens up new possibilities for using LLMs that are otherwise prevented by their unreliability.},
+issn={1476-4687},
+doi={10.1038/s41586-024-07421-0},
+url={https://doi.org/10.1038/s41586-024-07421-0}
+}
+
+
+@inproceedings{manakul-etal-2023-selfcheckgpt,
+    title = "{S}elf{C}heck{GPT}: Zero-Resource Black-Box Hallucination Detection for Generative Large Language Models",
+    author = "Manakul, Potsawee  and
+      Liusie, Adian  and
+      Gales, Mark",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.557/",
+    doi = "10.18653/v1/2023.emnlp-main.557",
+    pages = "9004--9017",
+    abstract = "Generative Large Language Models (LLMs) such as GPT-3 are capable of generating highly fluent responses to a wide variety of user prompts. However, LLMs are known to hallucinate facts and make non-factual statements which can undermine trust in their output. Existing fact-checking approaches either require access to the output probability distribution (which may not be available for systems such as ChatGPT) or external databases that are interfaced via separate, often complex, modules. In this work, we propose {\textquotedblleft}SelfCheckGPT{\textquotedblright}, a simple sampling-based approach that can be used to fact-check the responses of black-box models in a zero-resource fashion, i.e. without an external database. SelfCheckGPT leverages the simple idea that if an LLM has knowledge of a given concept, sampled responses are likely to be similar and contain consistent facts. However, for hallucinated facts, stochastically sampled responses are likely to diverge and contradict one another. We investigate this approach by using GPT-3 to generate passages about individuals from the WikiBio dataset, and manually annotate the factuality of the generated passages. We demonstrate that SelfCheckGPT can: i) detect non-factual and factual sentences; and ii) rank passages in terms of factuality. We compare our approach to several baselines and show that our approach has considerably higher AUC-PR scores in sentence-level hallucination detection and higher correlation scores in passage-level factuality assessment compared to grey-box methods."
+}
+
+@inproceedings{chen-mueller-2024-quantifying,
+    title = "Quantifying Uncertainty in Answers from any Language Model and Enhancing their Trustworthiness",
+    author = "Chen, Jiuhai  and
+      Mueller, Jonas",
+    editor = "Ku, Lun-Wei  and
+      Martins, Andre  and
+      Srikumar, Vivek",
+    booktitle = "Proceedings of the 62nd Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = aug,
+    year = "2024",
+    address = "Bangkok, Thailand",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2024.acl-long.283/",
+    doi = "10.18653/v1/2024.acl-long.283",
+    pages = "5186--5200",
+    abstract = "We introduce BSDetector, a method for detecting bad and speculative answers from a pretrained Large Language Model by estimating a numeric confidence score for any output it generated. Our uncertainty quantification technique works for any LLM accessible only via a black-box API, whose training data remains unknown. By expending a bit of extra computation, users of any LLM API can now get the same response as they would ordinarily, as well as a confidence estimate that cautions when not to trust this response. Experiments on both closed and open-form Question-Answer benchmarks reveal that BSDetector more accurately identifies incorrect LLM responses than alternative uncertainty estimation procedures (for both GPT-3 and ChatGPT). By sampling multiple responses from the LLM and considering the one with the highest confidence score, we can additionally obtain more accurate responses from the same LLM, without extra training steps. In applications involving automated evaluation with LLMs, accounting for our confidence scores leads to more reliable evaluation in both human-in-the-loop and fully-automated settings (across both GPT 3.5 and 4)."
+}
+
+@misc{zhang2020bertscoreevaluatingtextgeneration,
+      title={BERTScore: Evaluating Text Generation with BERT}, 
+      author={Tianyi Zhang and Varsha Kishore and Felix Wu and Kilian Q. Weinberger and Yoav Artzi},
+      year={2020},
+      eprint={1904.09675},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/1904.09675}, 
+      doi="10.48550/arXiv.1904.09675"
+}
+
+@inproceedings{sellam-etal-2020-bleurt,
+    title = "{BLEURT}: Learning Robust Metrics for Text Generation",
+    author = "Sellam, Thibault  and
+      Das, Dipanjan  and
+      Parikh, Ankur",
+    editor = "Jurafsky, Dan  and
+      Chai, Joyce  and
+      Schluter, Natalie  and
+      Tetreault, Joel",
+    booktitle = "Proceedings of the 58th Annual Meeting of the Association for Computational Linguistics",
+    month = jul,
+    year = "2020",
+    address = "Online",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2020.acl-main.704/",
+    doi = "10.18653/v1/2020.acl-main.704",
+    pages = "7881--7892",
+    abstract = "Text generation has made significant advances in the last few years. Yet, evaluation metrics have lagged behind, as the most popular choices (e.g., BLEU and ROUGE) may correlate poorly with human judgment. We propose BLEURT, a learned evaluation metric for English based on BERT. BLEURT can model human judgment with a few thousand possibly biased training examples. A key aspect of our approach is a novel pre-training scheme that uses millions of synthetic examples to help the model generalize. BLEURT provides state-of-the-art results on the last three years of the WMT Metrics shared task and the WebNLG data set. In contrast to a vanilla BERT-based approach, it yields superior results even when the training data is scarce and out-of-distribution."
+}
+
+@misc{lin2024generatingconfidenceuncertaintyquantification,
+      title={Generating with Confidence: Uncertainty Quantification for Black-box Large Language Models}, 
+      author={Zhen Lin and Shubhendu Trivedi and Jimeng Sun},
+      year={2024},
+      eprint={2305.19187},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2305.19187}, 
+      doi="10.48550/arXiv.2305.19187"
+}
+
+
+@inproceedings{cole-etal-2023-selectively,
+    title = "Selectively Answering Ambiguous Questions",
+    author = "Cole, Jeremy  and
+      Zhang, Michael  and
+      Gillick, Daniel  and
+      Eisenschlos, Julian  and
+      Dhingra, Bhuwan  and
+      Eisenstein, Jacob",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.35/",
+    doi = "10.18653/v1/2023.emnlp-main.35",
+    pages = "530--543",
+    abstract = "Trustworthy language models should abstain from answering questions when they do not know the answer. However, the answer to a question can be unknown for a variety of reasons. Prior research has focused on the case in which the question is clear and the answer is unambiguous but possibly unknown. However, the answer to a question can also be unclear due to uncertainty of the questioner`s intent or context. We investigate question answering from this perspective, focusing on answering a subset of questions with a high degree of accuracy, from a set of questions in which many are inherently ambiguous. In this setting, we find that the most reliable approach to calibration involves quantifying repetition within a set of sampled model outputs, rather than the model`s likelihood or self-verification as used in prior work. We find this to be the case across different types of uncertainty, varying model scales and both with or without instruction tuning. Our results suggest that sampling-based confidence scores help calibrate answers to relatively unambiguous questions, with more dramatic improvements on ambiguous questions."
+}
+
+@misc{malinin2021uncertaintyestimationautoregressivestructured,
+      title={Uncertainty Estimation in Autoregressive Structured Prediction}, 
+      author={Andrey Malinin and Mark Gales},
+      year={2021},
+      eprint={2002.07650},
+      archivePrefix={arXiv},
+      primaryClass={stat.ML},
+      url={https://arxiv.org/abs/2002.07650}, 
+      doi="10.48550/arXiv.2002.07650"
+}
+
+@misc{luo2023chatgptfactualinconsistencyevaluator,
+      title={ChatGPT as a Factual Inconsistency Evaluator for Text Summarization}, 
+      author={Zheheng Luo and Qianqian Xie and Sophia Ananiadou},
+      year={2023},
+      eprint={2303.15621},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2303.15621}, 
+      doi="10.48550/arXiv.2303.15621"
+}
+
+@misc{xiong2024llmsexpressuncertaintyempirical,
+      title={Can LLMs Express Their Uncertainty? An Empirical Evaluation of Confidence Elicitation in LLMs}, 
+      author={Miao Xiong and Zhiyuan Hu and Xinyang Lu and Yifei Li and Jie Fu and Junxian He and Bryan Hooi},
+      year={2024},
+      eprint={2306.13063},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2306.13063}, 
+      doi="10.48550/arXiv.2306.13063"
+}
+
+
+
+
+
+
+%----------Uncertainty Quantification-------------------------%
+% SelfCheckGPT cited above
+% Semantic Entropy cited above
+
+%NeMo Guardrails
+%Github URL- https://github.com/NVIDIA/NeMo-Guardrails
+@inproceedings{rebedea-etal-2023-nemo,
+    title = "{N}e{M}o Guardrails: A Toolkit for Controllable and Safe {LLM} Applications with Programmable Rails",
+    author = "Rebedea, Traian  and
+      Dinu, Razvan  and
+      Sreedhar, Makesh Narsimhan  and
+      Parisien, Christopher  and
+      Cohen, Jonathan",
+    editor = "Feng, Yansong  and
+      Lefever, Els",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing: System Demonstrations",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-demo.40",
+    doi = "10.18653/v1/2023.emnlp-demo.40",
+    pages = "431--445",
+}
+
+
+%LangKit
+@software{langkit,
+author = {WhyLabs },
+license = {Apache-2.0 },
+title = {{langkit}},
+url={https://github.com/whylabs/langkit},
+year={2025},
+}
+
+
+%----------GT-Based Grading-------------------------%
+%evals
+%Github URL- https://github.com/openai/evals
+% DOI NOT AVAILABLE
+@software{Openai,
+author={{OpenAI}},
+license = {MIT},
+title = {{Evals}},
+url={https://github.com/openai/evals},
+year={2024},
+}
+
+%G-Eval
+%Github URL- https://github.com/nlpyang/geval
+@inproceedings{liu-etal-2023-g,
+    title = "{G}-Eval: {NLG} Evaluation using Gpt-4 with Better Human Alignment",
+    author = "Liu, Yang  and
+      Iter, Dan  and
+      Xu, Yichong  and
+      Wang, Shuohang  and
+      Xu, Ruochen  and
+      Zhu, Chenguang",
+    editor = "Bouamor, Houda  and
+      Pino, Juan  and
+      Bali, Kalika",
+    booktitle = "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+    month = dec,
+    year = "2023",
+    address = "Singapore",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.emnlp-main.153/",
+    doi = "10.18653/v1/2023.emnlp-main.153",
+    pages = "2511--2522",
+    abstract = "The quality of texts generated by natural language generation (NLG) systems is hard to measure automatically. Conventional reference-based metrics, such as BLEU and ROUGE, have been shown to have relatively low correlation with human judgments, especially for tasks that require creativity and diversity. Recent studies suggest using large language models (LLMs) as reference-free metrics for NLG evaluation, which have the benefit of being applicable to new tasks that lack human references. However, these LLM-based evaluators still have lower human correspondence than medium-size neural evaluators. In this work, we present G-Eval, a framework of using large language models with chain-of-thoughts (CoT) and a form-filling paradigm, to assess the quality of NLG outputs. We experiment with two generation tasks, text summarization and dialogue generation. We show that G-Eval with GPT-4 as the backbone model achieves a Spearman correlation of 0.514 with human on summarization task, outperforming all previous methods by a large margin. We also propose analysis on the behavior of LLM-based evaluators, and highlight the potential concern of LLM-based evaluators having a bias towards the LLM-generated texts."
+}
+
+
+%----------Source Comparison-------------------------%
+% RAGAS
+%Github URL- https://github.com/explodinggradients/ragas
+@misc{es2023ragasautomatedevaluationretrieval,
+      title={RAGAS: Automated Evaluation of Retrieval Augmented Generation}, 
+      author={Shahul Es and Jithin James and Luis Espinosa-Anke and Steven Schockaert},
+      year={2023},
+      eprint={2309.15217},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2309.15217}, 
+      doi="10.48550/arXiv.2309.15217"
+}
+
+% DeepEval
+%Github URL-https://github.com/confident-ai/deepeval
+% DOI NOT AVAILABLE
+@software{Ip_deepeval_2025,
+author = {Ip, Jeffrey and Vongthongsri, Kritin},
+license = {Apache-2.0},
+month = mar,
+title = {{deepeval}},
+url = {https://github.com/confident-ai/deepeval},
+version = {2.6.4},
+year = {2025}, 
+}
+
+%Self-RAG
+%Github URL-https://github.com/AkariAsai/self-rag
+@misc{asai2023selfraglearningretrievegenerate,
+      title={Self-RAG: Learning to Retrieve, Generate, and Critique through Self-Reflection}, 
+      author={Akari Asai and Zeqiu Wu and Yizhong Wang and Avirup Sil and Hannaneh Hajishirzi},
+      year={2023},
+      eprint={2310.11511},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2310.11511}, 
+      doi="10.48550/arXiv.2310.11511",
+}
+
+% ref-checker
+@misc{hu2024refcheckerreferencebasedfinegrainedhallucination,
+      title={RefChecker: Reference-based Fine-grained Hallucination Checker and Benchmark for Large Language Models}, 
+      author={Xiangkun Hu and Dongyu Ru and Lin Qiu and Qipeng Guo and Tianhang Zhang and Yang Xu and Yun Luo and Pengfei Liu and Yue Zhang and Zheng Zhang},
+      year={2024},
+      eprint={2405.14486},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2405.14486}, 
+      doi="10.48550/arXiv.2405.14486",
+}
+
+
+% UpTrain
+%Github URL- https://github.com/uptrain-ai/uptrain
+% DOI NOT AVAILABLE
+@software{uptrain,
+author = {{UpTrain AI Team}},
+title = {{UpTrain}},
+url = {https://github.com/uptrain-ai/uptrain},
+year = {2024}
+}
+
+
+%AlignScore
+%Github URL--https://github.com/yuh-zha/AlignScore
+@inproceedings{zha-etal-2023-alignscore,
+    title = "{A}lign{S}core: Evaluating Factual Consistency with A Unified Alignment Function",
+    author = "Zha, Yuheng  and
+      Yang, Yichi  and
+      Li, Ruichen  and
+      Hu, Zhiting",
+    editor = "Rogers, Anna  and
+      Boyd-Graber, Jordan  and
+      Okazaki, Naoaki",
+    booktitle = "Proceedings of the 61st Annual Meeting of the Association for Computational Linguistics (Volume 1: Long Papers)",
+    month = jul,
+    year = "2023",
+    address = "Toronto, Canada",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2023.acl-long.634/",
+    doi = "10.18653/v1/2023.acl-long.634",
+    pages = "11328--11348",
+    abstract = "Many text generation applications require the generated text to be factually consistent with input information. Automatic evaluation of factual consistency is challenging. Previous work has developed various metrics that often depend on specific functions, such as natural language inference (NLI) or question answering (QA), trained on limited data. Those metrics thus can hardly assess diverse factual inconsistencies (e.g., contradictions, hallucinations) that occur in varying inputs/outputs (e.g., sentences, documents) from different tasks. In this paper, we propose AlignScore, a new holistic metric that applies to a variety of factual inconsistency scenarios as above. AlignScore is based on a general function of information alignment between two arbitrary text pieces. Crucially, we develop a unified training framework of the alignment function by integrating a large diversity of data sources, resulting in 4.7M training examples from 7 well-established tasks (NLI, QA, paraphrasing, fact verification, information retrieval, semantic similarity, and summarization). We conduct extensive experiments on large-scale benchmarks including 22 evaluation datasets, where 19 of the datasets were never seen in the alignment training. AlignScore achieves substantial improvement over a wide range of previous metrics. Moreover, AlignScore (355M parameters) matches or even outperforms metrics based on ChatGPT and GPT-4 that are orders of magnitude larger."
+}
+
+
+% DOI Not available
+@software{Chase_LangChain_2022,
+author = {Chase, Harrison},
+month = oct,
+title = {{LangChain}},
+url = {https://github.com/langchain-ai/langchain},
+year = {2022}
+}
+
+
+% DOI not available
+@software{phoenix,
+author = {{Arize AI}},
+title = {{Phoenix}},
+url = {https://github.com/Arize-ai/phoenix},
+year = {2025}
+}
+
+%----------Internet-Based Grounding-------------------------%
+%FacTool
+%Github URL- https://github.com/GAIR-NLP/factool
+@article{chern2023factool,
+  title={FacTool: Factuality Detection in Generative AI--A Tool Augmented Framework for Multi-Task and Multi-Domain Scenarios},
+  author={Chern, I-Chun and Chern, Steffi and Chen, Shiqi and Yuan, Weizhe and Feng, Kehua and Zhou, Chunting and He, Junxian and Neubig, Graham and Liu, Pengfei and others},
+  journal={arXiv preprint arXiv:2307.13528},
+  year={2023},
+  doi="10.48550/arXiv.2307.13528"
+}
+
+
+
+%----------Benchmarks-------------------------%
+% HALLUCINATION LEADERBOARD
+@misc{Hughes_Vectara_Hallucination_Leaderboard_2023,
+author = {Hughes, Simon and Bae, Minseok and Li, Miaoran},
+month = nov,
+title = {{Vectara Hallucination Leaderboard}},
+url = {https://github.com/vectara/hallucination-leaderboard},
+year = {2023}
+}
+
+%TruthfulQA
+%Github URL-- https://github.com/sylinrl/TruthfulQA
+@misc{lin2022truthfulqameasuringmodelsmimic,
+      title={TruthfulQA: Measuring How Models Mimic Human Falsehoods}, 
+      author={Stephanie Lin and Jacob Hilton and Owain Evans},
+      year={2022},
+      eprint={2109.07958},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2109.07958}, 
+}
+
+%FELM
+%Github URL- https://github.com/hkust-nlp/felm
+@inproceedings{
+chen2023felm,
+title={FELM: Benchmarking Factuality Evaluation of Large Language Models},
+author={Chen, Shiqi and Zhao, Yiran and Zhang, Jinghan and Chern, I-Chun and Gao, Siyang and Liu, Pengfei and He, Junxian},
+booktitle={Thirty-seventh Conference on Neural Information Processing Systems Datasets and Benchmarks Track},
+year={2023},
+url={http://arxiv.org/abs/2310.00741}
+}
+
+
